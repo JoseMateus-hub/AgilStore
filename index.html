@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AgilStore - Gerenciamento de Produtos</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>🛒 AgilStore</h1>
-  <p>Gerenciamento de Produtos</p>
+  <header>
+    <h1>AgilStore</h1>
+    <p>Gerencie seus produtos de forma simples!</p>
+  </header>
 
-  <form id="productForm">
-    <input type="text" id="name" placeholder="Nome do produto" required>
-    <input type="number" id="price" placeholder="Preço" required>
-    <input type="number" id="quantity" placeholder="Quantidade" required>
-    <button type="submit">Adicionar Produto</button>
-  </form>
+  <main>
+    <section class="form-section">
+      <h2>Adicionar / Editar Produto</h2>
+      <form id="product-form">
+        <input type="hidden" id="product-id" />
 
-  <table>
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Preço (R$)</th>
-        <th>Quantidade</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody id="productList"></tbody>
-  </table>
+        <label for="name">Nome</label>
+        <input type="text" id="name" placeholder="Nome do produto" required />
+
+        <label for="price">Preço (R$)</label>
+        <input type="number" id="price" placeholder="0.00" step="0.01" required />
+
+        <label for="quantity">Quantidade</label>
+        <input type="number" id="quantity" placeholder="0" required />
+
+        <button type="submit">Salvar Produto</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Produtos Cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="product-list"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por José Mateus</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
